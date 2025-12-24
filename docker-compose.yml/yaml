@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  cat-api:
+    build: ./cat-api
+    ports:
+      - "5000:5000"
+
+  cat-favorites-api:
+    build: ./cat-favorites-api
+    ports:
+      - "5001:5001"
+    depends_on:
+      - cat-api
